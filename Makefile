@@ -20,7 +20,7 @@ delete-image:
 	docker rmi go-storage-with-clean-arch-api
 
 logs-api:
-	docker logs -f go-storage-api
+	docker logs -f go_storage_api
 
 migrateup-all:
 	migrate \
