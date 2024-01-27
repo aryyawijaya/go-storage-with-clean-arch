@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 
+	"github.com/aryyawijaya/go-storage-with-clean-arch/db/sqlc"
 	"github.com/jackc/pgx/v5/pgxpool"
 )
 

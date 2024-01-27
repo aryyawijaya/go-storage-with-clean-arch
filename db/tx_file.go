@@ -2,6 +2,9 @@ package db
 
 import (
 	"context"
+
+	"github.com/aryyawijaya/go-storage-with-clean-arch/db/sqlc"
+	"github.com/aryyawijaya/go-storage-with-clean-arch/entity"
 )
 
 func (store *SQLStore) CreateFileWithTx(ctx context.Context, arg *sqlc.CreateFileParams, saveFile func() error) (*sqlc.File, error) {

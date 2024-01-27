@@ -30,5 +30,9 @@ services:
         "/app/start.sh"
       ]
     volumes:
-      - go-storage/stored-files-production:/app/stored-files
+      - go-storage-prod:/app/stored-files
     command: [ "/app/main" ]
+
+volumes:
+  go-storage-pg-prod:
+  go-storage-prod:
