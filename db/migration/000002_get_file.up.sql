@@ -1,0 +1,1 @@
+ALTER TABLE "files" ADD COLUMN "ext" varchar NOT NULL

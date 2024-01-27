@@ -1,0 +1,12 @@
+FROM golang:1.21.4-alpine3.18
+WORKDIR /app
+COPY . .
+RUN wget https://github.com/golang-migrate/migrate/releases/download/v4.16.2/migrate.linux-amd64.tar.gz &&\
+    tar -xvf migrate.linux-amd64.tar.gz &&\
+    mv migrate /usr/local/bin/migrate
+RUN go install github.com/cosmtrek/air@latest
+RUN go mod download
+
+EXPOSE 8080
+CMD [ "air" ]
+ENTRYPOINT [ "/app/start.sh" ]
