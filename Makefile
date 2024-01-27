@@ -4,23 +4,23 @@ include .env
 # 1. create new migration file
 # - migrate create -ext sql -dir db/migration -seq <migration_name>
 
-compose-up-dev:
+up-dev:
 	docker compose -f compose.dev.yml up -d
 
-compose-down-dev:
+down-dev:
 	docker compose -f compose.dev.yml down
 
-compose-up-prod:
+up-prod:
 	docker compose -f compose.prod.yml up -d
 
-compose-down-prod:
+down-prod:
 	docker compose -f compose.prod.yml down
 
 delete-image:
-	docker rmi go-storage-api
+	docker rmi go-storage-with-clean-arch-api
 
 logs-api:
-	docker logs -f go-storage-api
+	docker logs -f go_storage_api
 
 migrateup-all:
 	migrate \
@@ -75,10 +75,10 @@ format:
 	go fmt ./...
 
 .PHONY:
-	compose-up-dev \
-	compose-down-dev \
-	compose-up-prod \
-	compose-down-prod \
+	up-dev \
+	down-dev \
+	up-prod \
+	down-prod \
 	delete-image \
 	logs-api \
 	migrateup-all \

@@ -6,6 +6,8 @@ import (
 	"os"
 	"testing"
 
+	"github.com/aryyawijaya/go-storage-with-clean-arch/db"
+	utilconfig "github.com/aryyawijaya/go-storage-with-clean-arch/util/config"
 	"github.com/jackc/pgx/v5/pgxpool"
 )
 
